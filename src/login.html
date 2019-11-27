@@ -1,0 +1,273 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos1.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" integrity="sha384-OckgXqsW9gChSQUk3yuOjrsavd6AfVDT3p/841X5h/gQjClnbqU4XVHbxCI88Hb7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" integrity="sha384-xyZLiqnBEFn1hDkS8VeG/YHoqOjS/ucimT8TI6GDr9+ZP1UNbZr6d/q0ldMi/xvL" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  </head>
+  <body>
+    <div class="container h-100 p-3 flex-column" id="login">
+      <nav class="navbar nav-pills nav-justified align-self-end col-lg-5">
+        <a class="nav-item nav-link" href="index.html">HOME</a>
+        <a class="nav-item nav-link" href="busca.html">BUSCA</a>
+        <a class="nav-item nav-link active" href="#">PERFIL</a>
+      </nav>
+      <div class="container m-auto">
+        <div class="row justify-content-md-center">
+         <div class="col-md-7 col-lg-4 mx-auto">
+            <h3 class="text-center text-secondary">Ingreso</h3>
+            <div id="error" class="alert alert-warning" role="alert">
+              <strong>Error!</strong> Contraseña/Mail Incorrecto.
+            </div>
+            <div class="form mt-md-4 mt-2">
+              <form>
+                  <div class="form-group">
+                     <input type="email" name="email"  class="form-control my-input" id="emailing" placeholder="Email" required>
+                  </div>
+                  <div class="form-group">
+                     <input type="password" name="password"  class="form-control my-input" id="passwording" placeholder="Contraseña" required>
+                  </div>
+              </form>
+                  <div class="text-center ">
+                     <button class=" btn btn-block send-button tx-tfm" id="btningreso">Ingresar</button>
+                  </div>
+                  <div class="col-md-12 ">
+                     <div class="login-or">
+                        <hr class="hr-or">
+                        <span class="span-or">o</span>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <a class="btn btn-block g-button" href="#">
+                     <i class="fa fa-google"></i> Ingresa con Google
+                     </a>
+                  </div>
+            </div>
+         </div>
+         <div class="sep">o o o</div>
+         <hr class="sep-mob col-sm-12 col-md-7">
+         <div class="col-md-7 col-lg-4 mx-auto">
+            <h3 class="text-center text-secondary">Registro</h3>
+            <div id="error2" class="alert alert-warning" role="alert">
+              <strong>Error!</strong> Email Registrado.
+            </div>
+            <div id="error3" class="alert alert-warning" role="alert">
+              <strong>Error!</strong> Completa los campos.
+            </div>
+            <div class="form">
+              <form id="formulario">
+                  <div class="form-group">
+                     <input type="text" name="name"  class="form-control my-input" id="namereg" placeholder="Nombre" required >
+                  </div>
+                  <div class="form-group">
+                     <input type="email" name="email"  class="form-control my-input" id="emailreg" placeholder="Email" required>
+                  </div>
+                  <div class="form-group">
+                     <input type="password" name="password"  class="form-control my-input" id="passwordreg" placeholder="Contraseña" required>
+                  </div>
+              </form>
+                  <div class="text-center ">
+                     <button class="btn btn-block send-button tx-tfm" id="btnregistro">
+                      Registrarse
+                     </button>
+                  </div>
+                  <div class="col-md-12 ">
+                     <div class="login-or">
+                        <hr class="hr-or">
+                        <span class="span-or">o</span>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <a class="btn btn-block g-button" href="#">
+                     <i class="fa fa-google"></i> Registrate con Google
+                     </a>
+                  </div>
+            </div>
+         </div>
+        </div>
+      </div>
+   </div>
+   <!-- animaciones de registro -->
+   <div class="container p-3 w-md-50 h-100" id="anima">
+     <div class="row m-md-auto">
+       <button type="button" class="back m-sm-2 mb-3" aria-label="Back" id="back">
+         <i class="fas fa-2x fa-arrow-circle-left"></i>
+       </button>
+       <div class="col-md- m-3 mt-5" id="prireg">
+         <h3 class="mt-4">Bienvenido! Ingresa tus datos</h3>
+         <label class="mt-4">Nombre del Local:</label>
+         <input class="form-control" id="local" >
+         <label class="mt-4">Direccion:</label>
+         <input class="form-control" id="direccion">
+         <button type="button" class="btn btn-outline-success mt-4" id="primer">Siguiente</button>
+       </div>
+       <div class="col-md- m-3 mt-5" id="segreg">
+         <h3 class="mt-4">Bien! Ahora configura tus horarios</h3>
+         <label class="mt-4">Horarios:</label>
+         <div class="form-group">
+           <div class="input-group input-group-sm">
+             <div class="input-group-prepend ">
+               <span class="input-group-text dia">Lunes</span>
+             </div>
+             <input type="text" class="form-control col-2" id="lun1">
+             <div class="input-group-prepend">
+               <span class="input-group-text">a</span>
+             </div>
+             <input type="text" class="form-control col-2" id="lun2">
+             <div class="input-group-prepend">
+               <span class="input-group-text">Hs</span>
+             </div>
+             <div class="input-group-prepend cerrado">
+               <span class="input-group-text">Cerrado</span>
+               <div class="input-group-text">
+                 <input type="checkbox" aria-label="Checkbox for following text input" id="chlun">
+               </div>
+             </div>
+           </div>
+           <div class="input-group input-group-sm">
+             <div class="input-group-prepend ">
+               <span class="input-group-text dia">Martes</span>
+             </div>
+             <input type="text" class="form-control col-2" id="mar1">
+             <div class="input-group-prepend">
+               <span class="input-group-text">a</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="mar2">
+             <div class="input-group-prepend">
+               <span class="input-group-text">Hs</span>
+             </div>
+             <div class="input-group-prepend cerrado">
+               <span class="input-group-text">Cerrado</span>
+               <div class="input-group-text">
+                 <input type="checkbox" aria-label="Checkbox for following text input" id="chmar">
+               </div>
+             </div>
+           </div>
+           <div class="input-group input-group-sm">
+             <div class="input-group-prepend ">
+               <span class="input-group-text dia">Miercoles</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="mie1">
+             <div class="input-group-prepend">
+               <span class="input-group-text">a</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="mie2">
+             <div class="input-group-prepend">
+               <span class="input-group-text">Hs</span>
+             </div>
+             <div class="input-group-prepend cerrado">
+               <span class="input-group-text">Cerrado</span>
+               <div class="input-group-text">
+                 <input type="checkbox" aria-label="Checkbox for following text input" id="chmie">
+               </div>
+             </div>
+           </div>
+           <div class="input-group input-group-sm">
+             <div class="input-group-prepend ">
+               <span class="input-group-text dia">Jueves</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="jue1">
+             <div class="input-group-prepend">
+               <span class="input-group-text">a</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="jue2">
+             <div class="input-group-prepend">
+               <span class="input-group-text">Hs</span>
+             </div>
+             <div class="input-group-prepend cerrado">
+               <span class="input-group-text">Cerrado</span>
+               <div class="input-group-text">
+                 <input type="checkbox" aria-label="Checkbox for following text input" id="chjue">
+               </div>
+             </div>
+           </div>
+           <div class="input-group input-group-sm">
+             <div class="input-group-prepend ">
+               <span class="input-group-text dia">Viernes</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="vie1">
+             <div class="input-group-prepend">
+               <span class="input-group-text">a</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="vie2">
+             <div class="input-group-prepend">
+               <span class="input-group-text">Hs</span>
+             </div>
+             <div class="input-group-prepend cerrado">
+               <span class="input-group-text">Cerrado</span>
+               <div class="input-group-text">
+                 <input type="checkbox" aria-label="Checkbox for following text input" id="chvie">
+               </div>
+             </div>
+           </div>
+           <div class="input-group input-group-sm">
+             <div class="input-group-prepend ">
+               <span class="input-group-text dia">Sabado</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="sab1">
+             <div class="input-group-prepend">
+               <span class="input-group-text">a</span>
+             </div>
+             <input type="text" class="form-control col-2" id="sab2">
+             <div class="input-group-prepend">
+               <span class="input-group-text">Hs</span>
+             </div>
+             <div class="input-group-prepend cerrado">
+               <span class="input-group-text">Cerrado</span>
+               <div class="input-group-text">
+                 <input type="checkbox" aria-label="Checkbox for following text input" id="chsab">
+               </div>
+             </div>
+           </div>
+           <div class="input-group input-group-sm">
+             <div class="input-group-prepend ">
+               <span class="input-group-text dia">Domingo</span>
+             </div>
+             <input type="text" class="form-control col-2" id="dom1">
+             <div class="input-group-prepend">
+               <span class="input-group-text">a</span>
+             </div>
+             <input type="text" class="form-control col-2"  id="dom2">
+             <div class="input-group-prepend">
+               <span class="input-group-text">Hs</span>
+             </div>
+             <div class="input-group-prepend cerrado">
+               <span class="input-group-text">Cerrado</span>
+               <div class="input-group-text">
+                 <input type="checkbox" aria-label="Checkbox for following text input" id="chdom">
+               </div>
+             </div>
+           </div>
+         </div>
+         <button type="button" class="btn btn-outline-success mt-4" id="segundo">Siguiente</button>
+       </div>
+       <div class="col-md- m-3 mt-5" id="terreg">
+         <h3 class="mt-4">Ultimo Paso! Muestranos la entrada de tu local</h3>
+         <div class="field" align="left">
+           <label id="ingfot" for="files">
+             <i id="icoup" class="fas fa-file-upload fa-3x"></i>
+           </label>
+           <input type="file" id="files" name="files[] multiple" />
+         </div>
+         <div class="text-center">
+            <button class=" btn btn-block send-button tx-tfm mt-4" id="tercer">
+              <span id="txtregistro">Finalizar</span>
+            </button>
+         </div>
+       </div>
+       <a id="omitir"><span id="txtomitir">No quiero crear local</span></a>
+     </div>
+   </div>
+   <script src="js/config.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <script src="js/login.js" ></script>
+</body>
